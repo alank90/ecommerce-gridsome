@@ -1,4 +1,4 @@
-# Default starter for Gridsome
+# Leveraging Vue.js & GraphQL with Gridsome (Airtable Database Example)
 
 This is the project you get when you run `gridsome create new-project`.
 
@@ -6,9 +6,21 @@ This is the project you get when you run `gridsome create new-project`.
 
 `npm install --global @gridsome/cli`
 
-### 2. Create a Gridsome project
+### 2. This project
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+This project will highlight some of Gridsome’s neat features while using Airtable as a handcrafted database. It utilizes [Snipcart](https://app.snipcart.com) as the ecommerce backend.
+
+Steps 🛠
+
+1.   Creating a Gridsome project
+
+2.  Handling a products sheet in Airtable
+
+3.   Crafting a Gridsome data source plugin to fetch products from Airtable
+
+4.   Querying data with GraphQL
+
+5.   Building Vue.js views & listing
+
+6.   Adding the buy button
+
