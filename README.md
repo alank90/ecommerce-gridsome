@@ -1,26 +1,27 @@
-# Leveraging Vue.js & GraphQL with Gridsome (Airtable Database Example)
-
-This is the project you get when you run `gridsome create new-project`.
-
-### 1. Install Gridsome CLI tool if you don't have
+### 1. Install Gridsome CLI tool if you don't have it
 
 `npm install --global @gridsome/cli`
 
 ### 2. This project
 
+# Leveraging Vue.js & GraphQL with Gridsome (Airtable Database Example)
 This project will highlight some of Gridsome’s neat features while using Airtable as a handcrafted database. It utilizes [Snipcart](https://app.snipcart.com) as the ecommerce backend.
 
-Steps 🛠
+![gridsome-demo](https://snipcart.com/media/203990/gridsome-airtable-tutorial.png)
 
-1.   Creating a Gridsome project
 
-2.  Handling a products sheet in Airtable
+Vue & GraphQL-powered e-commerce app. This project highlight's some of Gridsome’s neat features while using Airtable as a handcrafted database.
 
-3.   Crafting a Gridsome data source plugin to fetch products from Airtable
+Steps:
 
-4.   Querying data with GraphQL
+- Creating a Gridsome project
+- Handling a products sheet in Airtable
+- Crafting a Gridsome data source plugin to fetch products from Airtable
+- Querying data with GraphQL
+- Building Vue.js views & listing
+- Adding the buy button
 
-5.   Building Vue.js views & listing
+> You can read more [here](https://snipcart.com/blog/vuejs-graphql-airtable-example)
 
-6.   Adding the buy button
+> See a live demo [here](https://snipcart-gridsome-airtable.netlify.com/)
 

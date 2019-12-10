@@ -11,7 +11,7 @@ module.exports = {
       use: "/src/sources/products",
       options: {
         apiKey: "keyYQ7BudA9eJkhDN",
-        base: "<your base ID here>"
+        base: "appP23Y0dQxf4473p"
       }
     }
   ]
