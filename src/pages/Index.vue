@@ -3,59 +3,20 @@
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <g-image alt="Example image" src="~/favicon.png" width="135" />
 
-    <section class="products">
-      <ProductPreview
-        v-for="edge in $page.allProduct.edges"
-        :key="edge.node.id"
-        :product="edge.node"
-        class="product"
-      />
-    </section>
-    <Pager :info="$page.allProduct.pageInfo" class="product-navigation" />
+    <h1>Ecommerce</h1>
   </Layout>
 </template>
 
 <script>
-import { Pager } from "gridsome";
-import ProductPreview from "../components/ProductPreview";
+
 export default {
   metaInfo: {
     titleTemplate: "Snipcart's Furniture Store"
-  },
-  components: {
-    Pager,
-    ProductPreview
   }
 };
 </script>
 
-<page-query>
-query Products($page: Int) {
-  allProduct (perpage:6, page: $page) @paginate {
-    pageInfo {
-      totalPages
-      currentPage
-    }
-    edges {
-      node {
-        id,
-        title,
-        path,
-        price,
-        content,
-        picture {
-          thumbnails {
-            large {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-}
 
-</page-query>
 
 <style>
 .product-navigation {
