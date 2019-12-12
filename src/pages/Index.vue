@@ -1,14 +1,13 @@
 <template>
   <Layout>
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Ecommerce</h1>
+    <section>
+     <h1>Gridsome Ecommerce</h1>
+    </section>
   </Layout>
 </template>
 
-<script>
 
+<script>
 export default {
   metaInfo: {
     titleTemplate: "Snipcart's Furniture Store"
