@@ -1,16 +1,59 @@
 <template>
   <Layout>
-    <section>
-     <h1>Gridsome Ecommerce</h1>
+    <section class="products">
+      <ProductPreview
+        v-for="edge in $page.allProduct.edges"
+        :key="edge.node.id"
+        :product="edge.node"
+        class="product"
+      />
     </section>
   </Layout>
 </template>
 
+<page-query>
+  # Write your query or mutation here
+  query Products {
+    allProduct {
+      edges {
+        node {
+          id
+          title
+          path
+          price
+          content
+          fields {
+            Images {
+              thumbnails {
+                large {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+</page-query>
+
 
 <script>
+import { Pager } from "gridsome";
+import ProductPreview from "../components/ProductPreview";
+
 export default {
   metaInfo: {
     titleTemplate: "Snipcart's Furniture Store"
+  },
+  components: {
+    Pager,
+    ProductPreview
+  },
+  data: function() {
+    return {
+      product: {}
+    };
   }
 };
 </script>

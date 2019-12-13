@@ -8,11 +8,14 @@ module.exports = {
   siteName: "Ecommerce & Gridsome",
   plugins: [
     {
-      use: "/src/sources/products",
+      use: "~/src/sources/products",
       options: {
         apiKey: "keyYQ7BudA9eJkhDN",
         base: "appP23Y0dQxf4473p"
       }
-    }
-  ]
+    },
+  ],
+  templates: {
+    Product: "/products/:slug" // Set route for Product collection
+  }
 };

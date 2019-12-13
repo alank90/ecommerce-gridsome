@@ -32,13 +32,13 @@ const Airtable = require("airtable");
 // This is the Server API. Must export a function.
 module.exports = function(api, opts) {
   const base = new Airtable({ apiKey: opts.apiKey }).base(opts.base);
-
+  
   // api.loadSource(fn) is from the Gridsome Server API
   api.loadSource(async store => {
     // actions.addCollections(options) is from the Gridsome Data Store API
+    console.log("Im in index.js");
     const contentType = store.addCollection({
-      typeName: "Product",
-      route: "/products/:slug"
+      typeName: "Product"      
     });
      
     // From the Gridsome Schema API (deprecated use addSchemaTypes )
@@ -54,6 +54,7 @@ module.exports = function(api, opts) {
       .eachPage((records, fetchNextPage) => {
         records.forEach(record => {
           const item = record._rawJson;
+         
 
           // collection.addNode(options) is also from the Gridsome Data Store Api
           contentType.addNode({
