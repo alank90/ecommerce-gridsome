@@ -26,10 +26,10 @@ export default {
   data() {
     return {
       excerpt: makeExcerpt(this.product.content, 125),
-      image: this.product.length
+      image: this.product
         ? {
-            name: this.product.picture[0].filename,
-            url: this.product.picture[0].thumbnails.large.url.src
+            name: this.product.title,
+            url: this.product.fields.Images[0].thumbnails.large.url
           }
         : null
     };

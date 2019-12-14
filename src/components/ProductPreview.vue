@@ -2,16 +2,16 @@
   <article>
     <g-link :to="product.path">
       <figure v-if="image">
-        <img src="image.url" alt="image.name" />
+        <img :srcset="image.url" :alt="image.name" />
       </figure>
 
-      <h2>{{product.title}}</h2>
+      <h2>{{ product.title }}</h2>
     </g-link>
 
-    <p class="btn-line">
+    <!-- <p class="btn-line">
       <BuyButton :product="product" />
     </p>
-    <p>{{excerpt}}</p>
+    <p>{{excerpt}}</p>-->
   </article>
 </template>
 
@@ -32,10 +32,10 @@ export default {
   data() {
     return {
       excerpt: makeExcerpt(this.product.content, 125),
-      image: this.product.picture.length
+      image: this.product.fields.Images[0].thumbnails
         ? {
-            name: this.product.picture[0].filename,
-            url: this.product.picture[0].thumbnails.large.url.src
+            name: this.product.title,
+            url: this.product.fields.Images[0].thumbnails.large.url
           }
         : null
     };
