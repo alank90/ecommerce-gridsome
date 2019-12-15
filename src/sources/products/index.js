@@ -1,6 +1,10 @@
 /* jshint esversion:9 */
 
 /* 
+Note: All this code here could have been put directly into the gridsome.server.js file
+and no plugins entry in gridsome.condig.js would be necessary. Author choose this way.
+I guess it better modularizes the code:)
+
 Server API (https://gridsome.org/docs/server-api/)
   Create a gridsome.server.js at root in your project or plugin in order to use the 
 Server API. The file must export a function that will receive an API which allows 
@@ -32,15 +36,15 @@ const Airtable = require("airtable");
 // This is the Server API. Must export a function.
 module.exports = function(api, opts) {
   const base = new Airtable({ apiKey: opts.apiKey }).base(opts.base);
-  
+
   // api.loadSource(fn) is from the Gridsome Server API
   api.loadSource(async store => {
     // actions.addCollections(options) is from the Gridsome Data Store API
-    console.log("Im in index.js");
+
     const contentType = store.addCollection({
-      typeName: "Product"      
+      typeName: "Product"
     });
-     
+
     // From the Gridsome Schema API (deprecated use addSchemaTypes )
     contentType.addSchemaField("price", ({ graphql }) => ({
       type: graphql.GraphQLFloat,
@@ -54,7 +58,6 @@ module.exports = function(api, opts) {
       .eachPage((records, fetchNextPage) => {
         records.forEach(record => {
           const item = record._rawJson;
-         
 
           // collection.addNode(options) is also from the Gridsome Data Store Api
           contentType.addNode({
