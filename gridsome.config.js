@@ -16,6 +16,6 @@ module.exports = {
     },
   ],
   templates: {
-    Product: "/products/:slug" // Set route for Product collection
+    Product: "/products/:title" // Set route for allProduct node's
   }
 };

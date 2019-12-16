@@ -11,7 +11,7 @@ Server API. The file must export a function that will receive an API which allow
 it to hook into various parts of Gridsome. The second argument is options from the
 plugin entry in gridsome.config.js.
 
-    index.js will be loaded instead if no gridsome.server.js file is found. As is
+    index.js will be loaded instead if no gridsome.server.js plugin entry is found. As is
     the case in this project.
 
 

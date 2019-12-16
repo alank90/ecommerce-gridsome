@@ -4,7 +4,7 @@
       <aside>
         <figure>
           <img
-            src="$page.product.picture[selected].thumbnails.large.url.src"
+            :src="$page.product.fields.Images[0].thumbnails.large.url"
             alt="Product Image"
             class="img-main"
           />
