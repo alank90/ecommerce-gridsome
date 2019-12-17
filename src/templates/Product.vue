@@ -4,7 +4,7 @@
       <aside>
         <figure>
           <img
-            :src="$page.product.fields.Images[0].thumbnails.large.url"
+            :src="$page.product.fields.Images[selected].thumbnails.large.url"
             alt="Product Image"
             class="img-main"
           />
@@ -12,11 +12,11 @@
         <p>
           <img
             v-for="(img, index) in $page.product.fields.Images"
-            :key="img.thumbnails.large.url.src"
+            :key="img.thumbnails.large.url"
             @click="select(index)"
-            :src="img.thumbnails.large.url.src"
+            :src="img.thumbnails.large.url"
             class="img-preview"
-            :class="{active: index == selected}"
+            :class="{active: index === selected}"
             alt="No Image Available"
           />
         </p>
