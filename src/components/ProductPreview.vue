@@ -8,10 +8,10 @@
       <h2>{{ product.title }}</h2>
     </g-link>
 
-    <!-- <p class="btn-line">
+    <p class="btn-line">
       <BuyButton :product="product" />
     </p>
-    <p>{{excerpt}}</p>-->
+    <p>{{ excerpt }}</p>
   </article>
 </template>
 

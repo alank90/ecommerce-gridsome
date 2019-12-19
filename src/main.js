@@ -21,7 +21,7 @@ export default function(Vue, { router, head, isServer }) {
   head.script.push({
     type: "text/javascript",
     src: "https://cdn.snipcart.com/themes/v3.0.4/default/snipcart.js",
-    body: true,
+    body: true, // adds script before closing </body> tag
 
     // snipcart's attributes
     id: "snipcart",

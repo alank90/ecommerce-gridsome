@@ -2,7 +2,7 @@
   <Layout>
     <section class="products">
       <ProductPreview
-        v-for="edge in $page.allProduct.edges"
+        v-for="edge in groomedFurnitureBase"
         :key="edge.node.id"
         :product="edge.node"
         class="product"
@@ -54,6 +54,14 @@ export default {
     return {
       product: {}
     };
+  },
+  computed: {
+    // Check for any empty rows in Furniture base and remove them
+    groomedFurnitureBase: function() {
+      return this.$page.allProduct.edges.filter(record => {
+        return record.node.fields.Images.length > 0;
+      });
+    }
   }
 };
 </script>
