@@ -15,7 +15,7 @@
 
 <script>
 function makeExcerpt(str, len) {
-  var words = str.substr(0, len).split(" ");
+  let words = str.substr(0, len).split(" ");
   return words.slice(0, words.length - 1).join(" ") + "…";
 }
 
