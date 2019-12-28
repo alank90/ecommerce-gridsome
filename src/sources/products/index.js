@@ -2,7 +2,7 @@
 
 /* 
 Note: All this code here could have been put directly into the gridsome.server.js file
-and no plugins entry in gridsome.condig.js would be necessary. Author choose this way.
+and no plugins entry in gridsome.config.js would be necessary. Author choose this way.
 I guess it better modularizes the code:)
 
 Server API (https://gridsome.org/docs/server-api/)
@@ -53,6 +53,7 @@ module.exports = function(api, opts) {
       }
     }));
 
+    // This is the Airtable API retrieving table info
     await base("Furniture")
       .select()
       .eachPage((records, fetchNextPage) => {
