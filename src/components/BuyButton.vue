@@ -5,7 +5,7 @@
     :data-item-name="product.title"
     :data-item-description="excerpt"
     :data-item-image="image.url"
-    :data-item-price="product.price"
+    :data-item-price="product.fields.Unit_cost"
     :data-item-url="product.path"
   >
     <slot>Buy for ${{ product.fields.Unit_cost }}</slot>
