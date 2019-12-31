@@ -60,9 +60,10 @@ export default {
           id,
           title,
           path,
-          price,
+          
           content,
           fields {
+              Unit_cost,
               Images {
                   thumbnails {
                       large {

@@ -46,13 +46,13 @@ module.exports = function(api, opts) {
     });
 
     // From the Gridsome Schema API (deprecated use addSchemaTypes )
-    contentType.addSchemaField("price", ({ graphql }) => ({
+    /* contentType.addSchemaField("price", ({ graphql }) => ({
       type: graphql.GraphQLFloat,
       resolve(node) {
-        return node.fields.unitCost;
+        return node.fields.Unit_cost;
       }
     }));
-
+ */
     // This is the Airtable API retrieving table info
     await base("Furniture")
       .select()

@@ -11,6 +11,29 @@
   </Layout>
 </template>
 
+<script>
+import { Pager } from "gridsome";
+import ProductPreview from "../components/ProductPreview";
+
+export default {
+  metaInfo: {
+    titleTemplate: "Snipcart's Furniture Store"
+  },
+  components: {
+    Pager,
+    ProductPreview
+  },
+  computed: {
+    // Check for any empty rows in Furniture base and remove them
+    groomedFurnitureBase: function() {
+      return this.$page.allProduct.edges.filter(record => {
+        return record.node.fields.Images.length > 0;
+      });
+    }
+  }
+};
+</script>
+
 <page-query>
   # Write your query or mutation here
   query Products {
@@ -20,9 +43,9 @@
           id
           title
           path
-          price
           content
           fields {
+            Unit_cost
             Images {
               thumbnails {
                 large {
@@ -36,37 +59,6 @@
     }
   }
 </page-query>
-
-
-<script>
-import { Pager } from "gridsome";
-import ProductPreview from "../components/ProductPreview";
-
-export default {
-  metaInfo: {
-    titleTemplate: "Snipcart's Furniture Store"
-  },
-  components: {
-    Pager,
-    ProductPreview
-  },
-  data: function() {
-    return {
-      product: {}
-    };
-  },
-  computed: {
-    // Check for any empty rows in Furniture base and remove them
-    groomedFurnitureBase: function() {
-      return this.$page.allProduct.edges.filter(record => {
-        return record.node.fields.Images.length > 0;
-      });
-    }
-  }
-};
-</script>
-
-
 
 <style>
 .product-navigation {
