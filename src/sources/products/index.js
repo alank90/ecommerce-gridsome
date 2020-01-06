@@ -45,17 +45,9 @@ module.exports = function(api, opts) {
       typeName: "Product"
     });
 
-    // From the Gridsome Schema API (deprecated use addSchemaTypes )
-    /* contentType.addSchemaField("price", ({ graphql }) => ({
-      type: graphql.GraphQLFloat,
-      resolve(node) {
-        return node.fields.Unit_cost;
-      }
-    }));
- */
-    // This is the Airtable API retrieving table info
+    // This is the Airtable API for retrieving table info
     await base("Furniture")
-      .select()
+      .select() // fetch all records in the Furniture table
       .eachPage((records, fetchNextPage) => {
         records.forEach(record => {
           const item = record._rawJson;

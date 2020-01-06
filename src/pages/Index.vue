@@ -88,6 +88,7 @@ export default {
 .products figure,
 .products img {
   width: 100%;
+  max-height: 190px;
   margin: 0;
 }
 .products a {
