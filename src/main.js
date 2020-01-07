@@ -21,11 +21,7 @@ export default function(Vue, { router, head, isServer }) {
   head.script.push({
     type: "text/javascript",
     src: "https://cdn.snipcart.com/themes/v3.0.4/default/snipcart.js",
-    body: true, 
-
-    // snipcart's attributes
-    id: "snipcart",
-    "data-api-key": "OThmOGEyOTctMGMyNC00NjUwLTg1ZTMtYjIwYjg4YWYzZGE4NjM3MTE1MDIxOTU3OTAwODk0"
+    body: true
   });
 
   head.titleTemplate = "%s – Snipcart's Furniture Store";

@@ -2,6 +2,7 @@
   <div class="layout">
     <header class="header">
       <g-link :to="{ name: 'home' }" class="home-btn">Furniture Store</g-link>
+      <button class="snipcart-checkout">Goto Shopping Cart</button>
     </header>
     <section class="content">
       <slot />
@@ -19,6 +20,7 @@
         <a href="https://github.com/snipcart/snipcart-gridsome-airtable">the demo's repo</a>
       </p>
     </footer>
+    <div id="snipcart" data-api-key="OThmOGEyOTctMGMyNC00NjUwLTg1ZTMtYjIwYjg4YWYzZGE4NjM3MTE1MDIxOTU3OTAwODk0" hidden></div>
   </div>
 </template>
 
@@ -65,18 +67,28 @@ body,
 .home-btn {
   text-decoration: none;
   color: #4cba86;
-  font-size: 2.8em;
-  line-height: 1em;
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 600;
 }
 .home-btn:before {
-  background-image: url("/logo.svg");
+  background-image: url("/logo.png");
   content: "";
-  width: 0.8em;
-  height: 0.8em;
+  width: 2.8rem;
+  height: 2.5rem;
   display: inline-block;
   background-position: center;
   position: relative;
   top: 2px;
+}
+button.snipcart-checkout {
+  font-size: 1.1rem;
+  background-color: #9df1ca52;
+  border-radius: 5px;
+  font-weight: 400;
+  margin-right: -10%;
+  line-height: 1.8rem;
+  cursor: pointer;
 }
 .nav__link {
   margin-left: 20px;

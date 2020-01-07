@@ -87,6 +87,7 @@ figure,
 .img-main {
   display: block;
   width: 100%;
+  max-height: 95%;
   margin: 0;
 }
 figure {
