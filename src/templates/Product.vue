@@ -22,7 +22,7 @@
         </p>
       </aside>
       <h1>{{$page.product.title}}</h1>
-      <!-- <buy-button :product="$page.product" /> -->
+      <buy-button :product="$page.product" />
       <p>{{$page.product.content}}</p>
     </section>
   </Layout>

@@ -20,7 +20,6 @@
         <a href="https://github.com/snipcart/snipcart-gridsome-airtable">the demo's repo</a>
       </p>
     </footer>
-    <div id="snipcart" data-api-key="OThmOGEyOTctMGMyNC00NjUwLTg1ZTMtYjIwYjg4YWYzZGE4NjM3MTE1MDIxOTU3OTAwODk0" hidden></div>
   </div>
 </template>
 
