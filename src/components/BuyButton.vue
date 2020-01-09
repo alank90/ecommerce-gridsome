@@ -6,7 +6,7 @@
     :data-item-description="excerpt"
     :data-item-image="image.url"
     :data-item-price="product.fields.Unit_cost"
-    :data-item-url="product.path"
+    :data-item-url="'https://90eece44.ngrok.io' + $props.product.path"
   >
     <slot>Buy for ${{ product.fields.Unit_cost }}</slot>
   </button>
