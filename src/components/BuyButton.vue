@@ -6,7 +6,7 @@
     :data-item-description="excerpt"
     :data-item-image="image.url"
     :data-item-price="product.fields.Unit_cost"
-    :data-item-url="'http://2ed469d5.ngrok.io' + $props.product.path"
+    :data-item-url="'https://ecommerce-gridsome.netlify.com/' + $props.product.path"
   >
     <slot>Buy for ${{ product.fields.Unit_cost }}</slot>
   </button>
