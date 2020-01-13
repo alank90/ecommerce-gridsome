@@ -2,7 +2,7 @@
   <div class="layout">
     <header class="header">
       <g-link :to="{ name: 'home' }" class="home-btn">Furniture Store</g-link>
-      <button class="snipcart-checkout">Goto Shopping Cart</button>
+      <button class="snipcart-checkout">Goto Shopping Cart &#8702;</button>
     </header>
     <section class="content">
       <slot />
@@ -85,7 +85,7 @@ button.snipcart-checkout {
   background-color: #9df1ca52;
   border-radius: 5px;
   font-weight: 400;
-  margin-right: -10%;
+  margin-right: -25%;
   line-height: 1.8rem;
   cursor: pointer;
 }
