@@ -6,9 +6,9 @@
     :data-item-description="excerpt"
     :data-item-image="image.url"
     :data-item-price="product.fields.Unit_cost"
-    :data-item-url="'http://2ed469d5.ngrok.io' + $props.product.path"
+    :data-item-url="'https://ecommerce-gridsome.netlify.com' + $props.product.path"
   >
-    <slot>Buy for ${{ product.fields.Unit_cost }}</slot>
+    <slot>Buy for {{ itemCost }}</slot>
   </button>
 </template>
 
@@ -31,6 +31,17 @@ export default {
           }
         : null
     };
+  },
+  computed: {
+    itemCost: function() {
+      const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2
+      });
+
+      return formatter.format(this.product.fields.Unit_cost);
+    }
   }
 };
 </script>
