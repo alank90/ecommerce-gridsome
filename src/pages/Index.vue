@@ -27,7 +27,7 @@ export default {
     // Check for any empty rows in Furniture base and remove them
     groomedFurnitureBase: function() {
       return this.$page.allProduct.edges.filter(record => {
-        return record.node.fields.Images.length > 0;
+        return record.node.images.length > 0;
       });
     }
   }
@@ -44,15 +44,15 @@ export default {
           title
           path
           content
+          images {
+            thumbnails {
+                large {
+                   url
+                }
+            }
+          }
           fields {
             Unit_cost
-            Images {
-              thumbnails {
-                large {
-                  url
-                }
-              }
-            }
           }
         }
       }

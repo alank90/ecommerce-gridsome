@@ -24,10 +24,10 @@ export default {
   data() {
     return {
       excerpt: makeExcerpt(this.product.content, 125),
-      image: this.product.fields.Images[0].thumbnails
+      image: this.product.images[0].thumbnails
         ? {
             name: this.product.title,
-            url: this.product.fields.Images[0].thumbnails.large.url
+            url: this.product.images[0].thumbnails.large.url
           }
         : null
     };
