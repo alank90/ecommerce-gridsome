@@ -8,6 +8,8 @@
         class="product"
       />
     </section>
+
+    <Pager :info="$page.allProduct.pageInfo" class="product-navigation" />
   </Layout>
 </template>
 
@@ -36,8 +38,12 @@ export default {
 
 <page-query>
   # Write your query or mutation here
-  query Products {
-    allProduct {
+  query Products($page: Int) {
+    allProduct(perPage: 6, page: $page) @paginate {
+      pageInfo {
+        totalPages
+        currentPage
+      }
       edges {
         node {
           id
