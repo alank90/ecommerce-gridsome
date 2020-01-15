@@ -4,9 +4,13 @@
       <g-link :to="{ name: 'home' }" class="home-btn">Furniture Store</g-link>
       <button class="snipcart-checkout">Goto Shopping Cart &#8702;</button>
     </header>
-    <section class="content">
-      <slot />
-    </section>
+
+    <transition name="fade" appear>
+      <section class="content">
+        <slot />
+      </section>
+    </transition>
+
     <footer>
       <p>
         Made with a few ☕️ at
@@ -55,6 +59,14 @@ body,
 }
 .content {
   flex: 1;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.7s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 .header {
   display: flex;

@@ -8,6 +8,8 @@
         class="product"
       />
     </section>
+
+    <Pager :info="$page.allProduct.pageInfo" class="product-navigation" />
   </Layout>
 </template>
 
@@ -27,7 +29,7 @@ export default {
     // Check for any empty rows in Furniture base and remove them
     groomedFurnitureBase: function() {
       return this.$page.allProduct.edges.filter(record => {
-        return record.node.fields.Images.length > 0;
+        return record.node.images.length > 0;
       });
     }
   }
@@ -36,22 +38,24 @@ export default {
 
 <page-query>
   # Write your query or mutation here
-  query Products {
-    allProduct {
+  query Products($page: Int) {
+    allProduct(perPage: 6, page: $page) @paginate {
+      pageInfo {
+        totalPages
+        currentPage
+      }
       edges {
         node {
           id
           title
           path
           content
-          fields {
-            Unit_cost
-            Images {
-              thumbnails {
+          cost
+          images {
+            thumbnails {
                 large {
-                  url
+                   url
                 }
-              }
             }
           }
         }

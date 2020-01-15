@@ -4,14 +4,14 @@
       <aside>
         <figure>
           <img
-            :src="$page.product.fields.Images[selected].thumbnails.large.url"
+            :src="$page.product.images[selected].thumbnails.large.url"
             alt="Product Image"
             class="img-main"
           />
         </figure>
         <p>
           <img
-            v-for="(img, index) in $page.product.fields.Images"
+            v-for="(img, index) in $page.product.images"
             :key="img.thumbnails.large.url"
             @click="select(index)"
             :src="img.thumbnails.large.url"
@@ -60,19 +60,15 @@ export default {
           id,
           title,
           path,
-          
+          images {
+            thumbnails {
+                large {
+                   url
+                }
+            }
+          },
           content,
-          fields {
-              Unit_cost,
-              Images {
-                  thumbnails {
-                      large {
-                          url
-                      }
-                  }
-              }
-          }
-          
+          cost
       }
   }
 </page-query>
