@@ -51,15 +51,14 @@ module.exports = function(api, opts) {
       .eachPage((records, fetchNextPage) => {
         records.forEach(record => {
           const item = record._rawJson;
-          console.log(item);
 
           // collection.addNode(options) is also from the Gridsome Data Store Api
           contentType.addNode({
             id: item.id,
             title: item.fields.Name,
-            fields: item.fields,
             content: item.fields.Description,
-            images: item.fields.Images
+            images: item.fields.Images,
+            cost: item.fields["Unit cost"]
           });
         });
         fetchNextPage();

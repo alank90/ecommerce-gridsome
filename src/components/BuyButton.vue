@@ -5,7 +5,7 @@
     :data-item-name="product.title"
     :data-item-description="excerpt"
     :data-item-image="image.url"
-    :data-item-price="product.fields.Unit_cost"
+    :data-item-price="product.cost"
     :data-item-url="'https://ecommerce-gridsome.netlify.com' + $props.product.path"
   >
     <slot>Buy for {{ itemCost }}</slot>
@@ -40,7 +40,7 @@ export default {
         minimumFractionDigits: 2
       });
 
-      return formatter.format(this.product.fields.Unit_cost);
+      return formatter.format(this.product.cost);
     }
   }
 };

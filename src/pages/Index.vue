@@ -44,15 +44,13 @@ export default {
           title
           path
           content
+          cost
           images {
             thumbnails {
                 large {
                    url
                 }
             }
-          }
-          fields {
-            Unit_cost
           }
         }
       }

@@ -68,10 +68,7 @@ export default {
             }
           },
           content,
-          fields {
-              Unit_cost,
-          }
-          
+          cost
       }
   }
 </page-query>
