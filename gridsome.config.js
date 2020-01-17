@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: "Ecommerce & Gridsome",
+  pathPrefix: "/furniture",
   plugins: [
     {
       use: "~/src/sources/products",
@@ -13,7 +14,7 @@ module.exports = {
         apiKey: "keyYQ7BudA9eJkhDN",
         base: "appP23Y0dQxf4473p"
       }
-    },
+    }
   ],
   templates: {
     Product: "/products/:title" // Set route for allProduct node's

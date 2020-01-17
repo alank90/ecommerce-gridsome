@@ -25,5 +25,7 @@ Steps:
 
 > See a live demo [here](https://snipcart-gridsome-airtable.netlify.com/)
 
-## Important ##
+## Important Notes ##
 **In order to use Snipcart with dev server you need to use *grok* to make Snipcart's callback verification possible. See this [Snipcart writeup](https://snipcart.com/blog/develop-a-snipcart-powered-website-locally-using-ngrok)**
+
+**If deploying to an Apache subdirectory (*/var/www/furnture*) must add the pathPrefix property to gridsome.config.js(i.e. pathPrefix: "/furniture")**
