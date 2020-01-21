@@ -6,7 +6,6 @@
 
 module.exports = {
   siteName: "Ecommerce & Gridsome",
-  pathPrefix: "/furniture",
   plugins: [
     {
       use: "~/src/sources/products",
